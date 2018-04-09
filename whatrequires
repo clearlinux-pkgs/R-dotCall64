@@ -1,1 +1,13 @@
 # This file contains recursive sources that require this package
+R-DendSer
+R-ROCR
+R-RandomFields
+R-RandomFieldsUtils
+R-bipartite
+R-caTools
+R-dendextend
+R-fields
+R-gplots
+R-seriation
+R-spam
+R-spatstat
