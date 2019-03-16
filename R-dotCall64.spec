@@ -4,13 +4,13 @@
 #
 Name     : R-dotCall64
 Version  : 1.0.0
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Summary  : Enhanced Foreign Function Interface Supporting Long Vectors
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-dotCall64-lib
+Requires: R-dotCall64-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 
 %description
@@ -35,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532973828
+export SOURCE_DATE_EPOCH=1552752295
 
 %install
+export SOURCE_DATE_EPOCH=1552752295
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532973828
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library dotCall64|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  dotCall64 || :
 
 
 %files
@@ -102,10 +101,15 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/dotCall64/html/00Index.html
 /usr/lib64/R/library/dotCall64/html/R.css
 /usr/lib64/R/library/dotCall64/include/dotCall64.h
-/usr/lib64/R/library/dotCall64/libs/symbols.rds
+/usr/lib64/R/library/dotCall64/tests/run-all.R
+/usr/lib64/R/library/dotCall64/tests/testthat/test-againstDotC.R
+/usr/lib64/R/library/dotCall64/tests/testthat/test-flow-center.R
+/usr/lib64/R/library/dotCall64/tests/testthat/test-flow-left.R
+/usr/lib64/R/library/dotCall64/tests/testthat/test-flow-right.R
+/usr/lib64/R/library/dotCall64/tests/testthat/test-long_int64.R
+/usr/lib64/R/library/dotCall64/tests/testthat/test-vector_dc.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/dotCall64/libs/dotCall64.so
-/usr/lib64/R/library/dotCall64/libs/dotCall64.so.avx2
 /usr/lib64/R/library/dotCall64/libs/dotCall64.so.avx512
