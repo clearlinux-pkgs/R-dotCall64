@@ -4,7 +4,7 @@
 #
 Name     : R-dotCall64
 Version  : 1.0.0
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Summary  : Enhanced Foreign Function Interface Supporting Long Vectors
