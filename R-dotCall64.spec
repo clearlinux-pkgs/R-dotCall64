@@ -4,7 +4,7 @@
 #
 Name     : R-dotCall64
 Version  : 1.0.0
-Release  : 27
+Release  : 28
 URL      : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Summary  : Enhanced Foreign Function Interface Supporting Long Vectors
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-dotCall64-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 and .Fortran() from the foreign function interface. .C64() supports long
@@ -30,21 +29,22 @@ lib components for the R-dotCall64 package.
 
 %prep
 %setup -q -c -n dotCall64
+cd %{_builddir}/dotCall64
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571819447
+export SOURCE_DATE_EPOCH=1589744039
 
 %install
-export SOURCE_DATE_EPOCH=1571819447
+export SOURCE_DATE_EPOCH=1589744039
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -113,4 +113,5 @@ R CMD check --no-manual --no-examples --no-codoc dotCall64 || :
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/dotCall64/libs/dotCall64.so
+/usr/lib64/R/library/dotCall64/libs/dotCall64.so.avx2
 /usr/lib64/R/library/dotCall64/libs/dotCall64.so.avx512
