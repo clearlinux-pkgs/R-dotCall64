@@ -4,7 +4,7 @@
 #
 Name     : R-dotCall64
 Version  : 1.0.0
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/dotCall64_1.0-0.tar.gz
 Summary  : Enhanced Foreign Function Interface Supporting Long Vectors
@@ -36,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589744039
+export SOURCE_DATE_EPOCH=1589747992
 
 %install
-export SOURCE_DATE_EPOCH=1589744039
+export SOURCE_DATE_EPOCH=1589747992
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
