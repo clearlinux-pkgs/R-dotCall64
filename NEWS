@@ -1,4 +1,16 @@
 # dotCall64
+
+# 1.1-0
+Date: 2022-10-16
+* Addressed issue from  `_R_CHECK_FORTRAN_KIND_DETAILS_` 
+* Switched from "OpenMPController" to "RhpcBLASctl"
+* Minor changes in `CITATION`
+
+# 1.0-2
+Date: 2022-10-03
+* change of `dotCall64helpers.c`
+
+# 1.0-1
 commit 8d65b1cb96c4c7568515aa3f9c2a48cd3bdb8661 (HEAD -> master, origin/master, origin/HEAD)
 Author: Florian Gerber <flora.fauna.gerber@gmail.com>
 Date:   Wed Feb 10 15:13:40 2021 -0700
