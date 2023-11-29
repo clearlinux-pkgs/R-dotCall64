@@ -1,7 +1,11 @@
 # dotCall64
 
 # 1.1-0
-Date: 2022-10-16
+Date: 2023-11-28
+* Addressed `[-Wformat=]` issue resulting on variable type of `R_xlen_t`
+
+# 1.1-0
+Date: 2023-10-16
 * Addressed issue from  `_R_CHECK_FORTRAN_KIND_DETAILS_` 
 * Switched from "OpenMPController" to "RhpcBLASctl"
 * Minor changes in `CITATION`
